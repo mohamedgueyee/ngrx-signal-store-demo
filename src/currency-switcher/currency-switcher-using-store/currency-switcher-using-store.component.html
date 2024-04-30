@@ -1,0 +1,7 @@
+<select #dropdown (change)="currencyStore.setCurrency(dropdown.value)">
+  @for (currency of currencyStore.currencies(); track currency.code) {
+  <option [value]="currency.code">
+    {{ currency.code }} ({{ currency.symbol }})
+  </option>
+  }
+</select>

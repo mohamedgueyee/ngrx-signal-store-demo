@@ -1,0 +1,17 @@
+<h1>Service vs Store</h1>
+
+<h5>Using Store<h5>
+  <app-currency-switcher-using-store />
+  The price for a smoothie at the store is:
+  {{ currencyStore.currentCurrency().symbol }}
+  {{ priceInUsdAtStore / currencyStore.exchangeRate() | number : '0.0-2' }}
+<br />
+<hr />
+<br />
+  <h5>Using Service<h5>
+  <app-currency-switcher-using-service />
+  The price for a smoothie at the service station is:
+  {{ currencyService.currentCurrency().symbol }}
+  {{
+    priceInUsdAtStation / currencyStore.exchangeRate() | number : '0.0-2'
+  }}
